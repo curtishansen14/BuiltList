@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using BuildList;
 
 namespace BuildListTest
 {
@@ -9,6 +10,16 @@ namespace BuildListTest
         [TestMethod]
         public void TestMethod1()
         {
+            //Arrange
+            Add add = new Add();
+            Box<int> box = new Box<int>();
+
+
+            //Act
+            add = add.add()
+
+            //Assert
+            Assert.AreSame(box, )
         }
     }
 }
