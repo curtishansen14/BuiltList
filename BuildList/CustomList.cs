@@ -9,12 +9,14 @@ namespace BuildList
     public class CustomList<T>
     {
         //member variables
-        private int capacity = 5;
-        private int count = 0;
+        private int capacity;
+        private int count;
         public T[] arr;
         //constructor
         public CustomList()
         {
+            count = 0;
+            capacity = 5;
             arr = new T[capacity];
         }
 
@@ -36,8 +38,8 @@ namespace BuildList
             {
                 capacity = capacity * 2;
             }
+            T[] result = new T[capacity];
 
-             
             
         }
 
