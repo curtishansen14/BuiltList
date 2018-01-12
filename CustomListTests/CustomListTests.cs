@@ -24,19 +24,7 @@ namespace CustomListTests
             //Assert
             Assert.AreSame(expected, list[0]);
         }
-        //[TestMethod]
-        //public void Add_ManyInts_Add10Ints()
-        //{
 
-        //    //Arrange
-        //    CustomList<int> list = new CustomList<int>();
-        //    int expected = 7;
-        //    //Act
-        //    list.Add(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-
-        //    //Assert
-        //    Assert.AreSame(expected, list[6]);
-        //}
 
         [TestMethod]
         public void Add_OneString_AddString()
@@ -51,18 +39,59 @@ namespace CustomListTests
             Assert.AreSame(expected, list[0]);
         }
 
-        //[TestMethod]
-        //public void Add_MultipleString_AddStrings()
-        //{
-        //    //Arrange
-        //    CustomList<string> list = new CustomList<string>();
-        //    string expected = "dignity";
+        [TestMethod]
 
-        //    //Act
-        //    list.Add("Two", "households", "both", "alike", "in", "dignity");
-        //    //Assert
-        //    Assert.AreSame(expected, list[5]);
-        //}
+        public void Add_byte_Addbyte()
+        {
+            //Arrange
+            CustomList<byte> list = new CustomList<byte>();
+            byte expected = 255;
+            //Act
+            list.Add(255);
+            //Assert
+            Assert.AreSame(expected, list[0]);
+        }
+
+        [TestMethod]
+
+        public void Add_char_Addchar()
+        {
+            //Arrange
+            CustomList<char> list = new CustomList<char>();
+            char expected = '\x0058';
+            //Act
+            list.Add('\x0058');
+            //Assert
+            Assert.AreSame(expected, list[0]);
+        }
+
+        [TestMethod]
+
+        public void Add_decimal_Adddecimal()
+        {
+            //Arrange
+            CustomList<decimal> list = new CustomList<decimal>();
+            decimal expected = Decimal.MaxValue;
+            //Act
+            list.Add(Decimal.MaxValue);
+            //Assert
+            Assert.AreSame(expected, list[0]);
+        }
+
+        public void Add_Widget_AddWidget()
+        {
+            //Arrange
+            Widget expected;
+            expected = new Widget();
+
+            CustomList<Widget> list = new CustomList<Widget>();
+
+            //Act
+            list.Add(expected);
+
+            //Assert
+            Assert.AreSame(expected, list[0]);
+        }
 
     }
 }

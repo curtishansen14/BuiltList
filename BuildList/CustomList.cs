@@ -17,7 +17,7 @@ namespace BuildList
             set { arr[i] = value; }
         }
 
-       public T Add(T thing )
+       public T Add(T thing)
         {
             return thing;
         }

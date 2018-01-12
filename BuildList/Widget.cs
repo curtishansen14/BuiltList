@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BuildList
 {
-    class Widget
+    public class Widget
     {
     }
 }
