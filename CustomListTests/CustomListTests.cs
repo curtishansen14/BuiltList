@@ -27,56 +27,7 @@ namespace CustomListTests
 
 
         [TestMethod]
-        public void Add_OneString_AddString()
-        {
 
-            //Arrange
-            CustomList<string> list = new CustomList<string>();
-            string expected = "Bonjour";
-            //Act
-            list.Add("Bonjour");
-            //Assert
-            Assert.AreSame(expected, list[0]);
-        }
-
-        [TestMethod]
-
-        public void Add_byte_Addbyte()
-        {
-            //Arrange
-            CustomList<byte> list = new CustomList<byte>();
-            byte expected = 255;
-            //Act
-            list.Add(255);
-            //Assert
-            Assert.AreSame(expected, list[0]);
-        }
-
-        [TestMethod]
-
-        public void Add_char_Addchar()
-        {
-            //Arrange
-            CustomList<char> list = new CustomList<char>();
-            char expected = '\x0058';
-            //Act
-            list.Add('\x0058');
-            //Assert
-            Assert.AreSame(expected, list[0]);
-        }
-
-        [TestMethod]
-
-        public void Add_decimal_Adddecimal()
-        {
-            //Arrange
-            CustomList<decimal> list = new CustomList<decimal>();
-            decimal expected = Decimal.MaxValue;
-            //Act
-            list.Add(Decimal.MaxValue);
-            //Assert
-            Assert.AreSame(expected, list[0]);
-        }
 
         public void Add_Widget_AddWidget()
         {
@@ -92,6 +43,27 @@ namespace CustomListTests
             //Assert
             Assert.AreSame(expected, list[0]);
         }
+        // what does the add do?
+        // add to an already existing list
+        // change count 
 
+        [TestMethod]
+        public void Add_Count_updateCount()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>();
+            int expected = 1;
+            int thing = 3;
+            //Act
+            list.Kount(list.Add(expected));
+            //Assert
+            Assert.AreSame(expected, list.Kount(thing));
+        }
+
+        [TestMethod]
+        public void Add_UpdateExisting_AddtoExistingList()
+        {
+
+        }
     }
 }

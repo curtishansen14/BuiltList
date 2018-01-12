@@ -9,7 +9,7 @@ namespace BuildList
     public class CustomList<T>
     {
         //Methods go here ie toString, Add, Remove, etc
-        public T[] arr = new T[10];
+        public T[] arr = new T[2];
 
         public T this[int i]
         {
@@ -22,7 +22,11 @@ namespace BuildList
             return thing;
         }
 
-
+        public T Kount(T thing)
+        {
+          
+            return thing;
+        }
         
     }
 }
