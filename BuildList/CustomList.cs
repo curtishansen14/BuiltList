@@ -8,8 +8,9 @@ namespace BuildList
 {
     public class CustomList<T>
     {
+        public int count = 0;
         //Methods go here ie toString, Add, Remove, etc
-        public T[] arr = new T[2];
+        public T[] arr = new T[5];
 
         public T this[int i]
         {
@@ -17,16 +18,16 @@ namespace BuildList
             set { arr[i] = value; }
         }
 
-       public T Add(T thing)
+       public T Add(T Input)
         {
-            return thing;
+
+            count++; 
+            return Input;
         }
 
-        public T Kount(T thing)
+        public int Count
         {
-          
-            return thing;
+            get { return count; }
         }
-        
     }
 }

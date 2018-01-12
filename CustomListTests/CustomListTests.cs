@@ -53,17 +53,58 @@ namespace CustomListTests
             //Arrange
             CustomList<int> list = new CustomList<int>();
             int expected = 1;
-            int thing = 3;
+
             //Act
-            list.Kount(list.Add(expected));
+            list.Add(expected);
             //Assert
-            Assert.AreSame(expected, list.Kount(thing));
+            Assert.AreEqual(expected, list.Count);
         }
 
         [TestMethod]
-        public void Add_UpdateExisting_AddtoExistingList()
-        {
 
+        public void Add_ExistingArrary_AddtoExistingList()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>();
+            int expected = 1;
+            int filler = 4;
+            //Act
+            list.Add(filler);
+            list.Add(filler);
+            list.Add(filler);
+            list.Add(1);
+            //Assert
+            Assert.AreSame(expected, list[3]);
         }
+
+        [TestMethod]
+
+        public void Add_GreaterThanCapacity_AddCapacity()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>();
+            int filler = 3;
+            int expected = 1;
+            //Act
+            list.Add(filler);
+            list.Add(filler);
+            list.Add(filler);
+            list.Add(filler);
+            list.Add(filler);
+            list.Add(filler);
+            list.Add(1);
+            //Assert
+            Assert.AreEqual(expected, list[6]);
+        }
+        //[TestMethod]
+        //public void Add_UpdateExisting_AddtoExistingList()
+        //{
+        //    //Arrange
+        //    CustomList<int> list = new CustomList<int>();
+        //    int expected = 1;
+        //    //Act
+        //    list.Add(expected);
+        //    //Assert 
+        //}
     }
 }
