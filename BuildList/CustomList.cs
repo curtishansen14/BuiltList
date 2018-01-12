@@ -8,11 +8,21 @@ namespace BuildList
 {
     public class CustomList<T>
     {
-       //Methods go here ie toString, Add, Remove, etc
+        //Methods go here ie toString, Add, Remove, etc
+        public T[] arr = new T[10];
+
+        public T this[int i]
+        {
+            get { return arr[i]; }
+            set { arr[i] = value; }
+        }
+
        public T Add(T thing)
         {
             return thing;
         }
 
+
+        
     }
 }
