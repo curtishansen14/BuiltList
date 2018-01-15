@@ -33,14 +33,24 @@ namespace BuildList
         public void Add(T Input)
         {
 
-            count++;
-            if (count / capacity >= .5)
+            
+            T[] result = new T[capacity];
+            if ((decimal)count / capacity >= .5m)
             {
                 capacity = capacity * 2;
             }
-            T[] result = new T[capacity];
 
+            //loop
+            for (int i = 0; i < count ; i++)
+            {
+                result[i] = arr[i];
+            }
+            result[count] = Input;
             
+            arr = result;
+            count++;
+
+
         }
 
 

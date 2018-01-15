@@ -22,7 +22,7 @@ namespace CustomListTests
             list.Add(11);
 
             //Assert
-            Assert.AreSame(expected, list[0]);
+            Assert.AreEqual(expected, list[0]);
         }
 
 
@@ -43,9 +43,6 @@ namespace CustomListTests
             //Assert
             Assert.AreSame(expected, list[0]);
         }
-        // what does the add do?
-        // add to an already existing list
-        // change count 
 
         [TestMethod]
         public void Add_Count_updateCount()
@@ -74,7 +71,7 @@ namespace CustomListTests
             list.Add(filler);
             list.Add(1);
             //Assert
-            Assert.AreSame(expected, list[3]);
+            Assert.AreEqual(expected, list[3]);
         }
 
         [TestMethod]
@@ -95,16 +92,9 @@ namespace CustomListTests
             list.Add(1);
             //Assert
             Assert.AreEqual(expected, list[6]);
+
+            //false positive? 
         }
-        //[TestMethod]
-        //public void Add_UpdateExisting_AddtoExistingList()
-        //{
-        //    //Arrange
-        //    CustomList<int> list = new CustomList<int>();
-        //    int expected = 1;
-        //    //Act
-        //    list.Add(expected);
-        //    //Assert 
-        //}
+
     }
 }
