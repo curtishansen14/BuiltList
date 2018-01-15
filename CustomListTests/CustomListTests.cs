@@ -195,6 +195,32 @@ namespace CustomListTests
             Assert.AreEqual(expected, result);
                
         }
+        //*********************Over Ride to String************************
 
+        [TestMethod]
+
+        public void toString_OverideInt_List()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4, 5 };
+            string expected = "1";
+
+            //Act
+            list.ToString();
+
+            //Assert 
+            Assert.AreEqual(expected, list[0]);
+        }
+
+        [TestMethod]
+
+        public void toString_OverideObject_list()
+        {
+            //Arrange
+
+            //Act
+
+            //Assert 
+        }
     }
 }

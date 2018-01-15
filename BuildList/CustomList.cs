@@ -34,9 +34,8 @@ namespace BuildList
 
         public void Add(T Input)
         {
-
-            
             T[] result = new T[capacity];
+
             if ((decimal)count / capacity >= .5m)
             {
                 capacity = capacity * 2;
@@ -83,6 +82,12 @@ namespace BuildList
             }
             arr = postRemove;
             return result; 
+        }
+
+        public override string ToString()
+        {
+
+            return base.ToString();
         }
 
 

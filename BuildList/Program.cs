@@ -11,6 +11,8 @@ namespace BuildList
         static void Main(string[] args)
         {
             CustomList<int> list = new CustomList<int>() { 10, 9, 8, 7, 8 };
+            Console.WriteLine(list.ToString());
+            Console.Read();
 
         }
 
