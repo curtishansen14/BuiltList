@@ -58,6 +58,30 @@ namespace BuildList
         public bool Remove(T Input)
         {
             bool result = false;
+            T[] postRemove = new T[capacity];
+
+            for (int i =0; i<count; i++)
+            {
+                if (Object.Equals(arr[i], Input) && !result)
+                {
+                    result = true;
+                    postRemove[i] = arr[i + 1];
+                    count--;
+   
+                }
+                else if (result)
+                {
+                    postRemove[i] = arr[i + 1];
+               
+                }
+                else
+                {
+                    postRemove[i] = arr[i];
+                  
+                }
+
+            }
+            arr = postRemove;
             return result; 
         }
 
@@ -76,8 +100,7 @@ namespace BuildList
             {
                 yield return arr[i];
             }
-            //Exception IndexOutOfBoundsException = new Exception();
-            throw new IndexOutOfRangeException();
+            
         }
     }
 }
