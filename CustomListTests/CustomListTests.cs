@@ -8,6 +8,7 @@ namespace CustomListTests
     public class CustomListTests
  
     {
+        //*******************Add Tests*************************
         
         [TestMethod]
         public void Add_OneInt_AddInt()
@@ -93,7 +94,23 @@ namespace CustomListTests
             //Assert
             Assert.AreEqual(expected, list[6]);
 
-            //false positive? 
+        }
+        //************************Remove Tests**********************************
+
+        [TestMethod]
+        public void remove_OneInt_AddInt()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>();
+
+
+            int expected = 11;
+
+            //Act
+            list.Add(11);
+
+            //Assert
+            Assert.AreEqual(expected, list[0]);
         }
 
     }
