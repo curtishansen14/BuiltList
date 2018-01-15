@@ -217,10 +217,17 @@ namespace CustomListTests
         public void toString_OverideObject_list()
         {
             //Arrange
+            Widget thing = new Widget();
+            Widget doodad = new Widget();
+            Widget widget = new Widget();
+            string expected = "thing";
 
+            CustomList<Widget> list = new CustomList<Widget>() { thing, doodad, widget };
             //Act
-
+            list.ToString();
             //Assert 
+            Assert.AreEqual(expected, list[0]);
+
         }
     }
 }
