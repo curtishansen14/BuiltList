@@ -160,5 +160,41 @@ namespace CustomListTests
             //Assert
             Assert.AreEqual(thing, list[2]);
         }
+
+        [TestMethod]
+        public void Remove_Count_updateCount()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>() { 10, 9, 8, 7, 8 };
+            int expected = 4;
+
+            //Act
+            list.Remove(8);
+            //Assert
+            Assert.AreEqual(expected, list.Count);
+        }
+
+        [TestMethod]
+
+        public void Remove_BoolYes_RemoveBool()
+        {
+            //if this test removes something it returns true 
+            // if it doesn't returns false
+
+            // Arrange
+            Widget widget = new Widget();
+            Widget thing = new Widget();
+            Widget doodad = new Widget();
+            CustomList<Widget> list = new CustomList<Widget>() { widget, thing, doodad, thing };
+            bool expected = true;
+
+            //Act
+
+            bool result = list.Remove(doodad);
+            //Assert 
+            Assert.AreEqual(expected, result);
+               
+        }
+
     }
 }

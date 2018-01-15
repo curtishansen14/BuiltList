@@ -55,9 +55,10 @@ namespace BuildList
 
         }
 
-        public void Remove(T Input)
+        public bool Remove(T Input)
         {
-
+            bool result = false;
+            return result; 
         }
 
 
