@@ -214,6 +214,22 @@ namespace CustomListTests
 
         [TestMethod]
 
+        public void toString_OverideInt_SecondIndex()
+        {
+            //Arrange 
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4, 5 };
+            string expected = "5";
+
+            //Act
+            list.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, list[4]);
+
+        }
+
+        [TestMethod]
+
         public void toString_OverideObject_list()
         {
             //Arrange
@@ -227,7 +243,8 @@ namespace CustomListTests
             list.ToString();
             //Assert 
             Assert.AreEqual(expected, list[0]);
-
         }
+
+
     }
 }
