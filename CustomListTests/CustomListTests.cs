@@ -98,20 +98,67 @@ namespace CustomListTests
         //************************Remove Tests**********************************
 
         [TestMethod]
-        public void remove_OneInt_AddInt()
+        public void Remove_OneInt_RemoveInt()
         {
             //Arrange
-            CustomList<int> list = new CustomList<int>();
+            CustomList<int> list = new CustomList<int>() { 10, 9, 8, 7, 8 };
 
-
-            int expected = 11;
+            int expected = 7;
 
             //Act
-            list.Add(11);
+            list.Remove(8);
 
             //Assert
-            Assert.AreEqual(expected, list[0]);
+            Assert.AreEqual(expected, list[2]);
         }
 
+        [TestMethod]
+        public void Remove_OneInt_CheckSecondInt()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>() { 10, 9, 8, 7, 8 };
+
+            int expected = 8;
+
+            //Act
+            list.Remove(8);
+
+            //Assert
+            Assert.AreEqual(expected, list[3]);
+        }
+
+        [TestMethod]
+        public void Remove_Widget_RemoveWidget()
+        {
+            //Arrange
+            Widget widget = new Widget();
+            Widget thing = new Widget();
+            Widget doodad = new Widget();
+            CustomList<Widget> list = new CustomList<Widget>() { widget, thing, doodad, thing };
+
+
+            //Act
+            list.Remove(thing);
+
+            //Assert
+            Assert.AreEqual(doodad, list[1]);
+        }
+
+        [TestMethod]
+        public void Remove_Widget_CheckForSecond()
+        {
+            //Arrange
+            Widget widget = new Widget();
+            Widget thing = new Widget();
+            Widget doodad = new Widget();
+            CustomList<Widget> list = new CustomList<Widget>() { widget, thing, doodad, thing };
+
+
+            //Act
+            list.Remove(thing);
+
+            //Assert
+            Assert.AreEqual(thing, list[2]);
+        }
     }
 }

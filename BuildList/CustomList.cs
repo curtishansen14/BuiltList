@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace BuildList
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable
     {
         //member variables
         private int capacity;
         private int count;
         public T[] arr;
+
         //constructor
         public CustomList()
         {
@@ -40,11 +42,11 @@ namespace BuildList
                 capacity = capacity * 2;
             }
 
-            //loop
             for (int i = 0; i < count ; i++)
             {
                 result[i] = arr[i];
             }
+
             result[count] = Input;
             
             arr = result;
@@ -53,7 +55,10 @@ namespace BuildList
 
         }
 
+        public void Remove(T Input)
+        {
 
+        }
 
 
         //getters and setters 
@@ -61,6 +66,17 @@ namespace BuildList
         public int Count
         {
             get { return count; }
+        }
+
+        //IEnumerator
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < count; i++)
+            {
+                yield return arr[i];
+            }
+            //Exception IndexOutOfBoundsException = new Exception();
+            throw new IndexOutOfRangeException();
         }
     }
 }
