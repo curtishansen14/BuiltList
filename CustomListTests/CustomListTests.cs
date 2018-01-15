@@ -203,47 +203,30 @@ namespace CustomListTests
         {
             //Arrange
             CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4, 5 };
-            string expected = "1";
+            string actual = "1 2 3 4 5";
 
             //Act
-            list.ToString();
+            string expected = list.ToString();
 
             //Assert 
-            Assert.AreEqual(expected, list[0]);
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
 
-        public void toString_OverideInt_SecondIndex()
+        public void toString_OverideBool_List()
         {
             //Arrange 
-            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4, 5 };
-            string expected = "5";
-
-            //Act
-            list.ToString();
+            CustomList<bool> list = new CustomList<bool>() { true, false, true };
+            string actual = " true false true";
+            //Act 
+            string expected = list.ToString();
 
             //Assert
-            Assert.AreEqual(expected, list[4]);
-
+            Assert.AreEqual(expected, actual); 
         }
 
-        [TestMethod]
 
-        public void toString_OverideObject_list()
-        {
-            //Arrange
-            Widget thing = new Widget();
-            Widget doodad = new Widget();
-            Widget widget = new Widget();
-            string expected = "thing";
-
-            CustomList<Widget> list = new CustomList<Widget>() { thing, doodad, widget };
-            //Act
-            list.ToString();
-            //Assert 
-            Assert.AreEqual(expected, list[0]);
-        }
 
 
     }
