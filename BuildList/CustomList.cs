@@ -120,6 +120,18 @@ namespace BuildList
             return list3;
         }
 
+        // not quite done here 
+        public CustomList<T> Zip(CustomList<T> list, CustomList<T> list2)
+        {
+            CustomList<T> ziplist = new CustomList<T>();
+
+            for (int i = 0; i < Count; i++)
+            {
+                ziplist.Add(list[i]);
+                ziplist.Add(list[i]);
+            }
+            return ziplist;
+        }
 
         //getters and setters 
 

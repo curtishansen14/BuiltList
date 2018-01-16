@@ -331,5 +331,11 @@ namespace CustomListTests
             //Assert 
             Assert.AreEqual(expected, list3.Count);
         }
+
+        //********************Overload - opperator*******************
+
+        [TestMethod]
+
+
     }
 }
