@@ -203,7 +203,7 @@ namespace CustomListTests
         {
             //Arrange
             CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4, 5 };
-            string actual = "1 2 3 4 5";
+            string actual = "12345";
 
             //Act
             string expected = list.ToString();
@@ -218,7 +218,7 @@ namespace CustomListTests
         {
             //Arrange 
             CustomList<bool> list = new CustomList<bool>() { true, false, true };
-            string actual = " true false true";
+            string actual = "TrueFalseTrue";
             //Act 
             string expected = list.ToString();
 

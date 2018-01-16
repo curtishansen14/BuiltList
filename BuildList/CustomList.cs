@@ -13,6 +13,7 @@ namespace BuildList
         private int capacity;
         private int count;
         public T[] arr;
+        //private object obj;
 
         //constructor
         public CustomList()
@@ -20,6 +21,8 @@ namespace BuildList
             count = 0;
             capacity = 5;
             arr = new T[capacity];
+           
+          //  obj = new object();
         }
 
         //indexer
@@ -84,10 +87,20 @@ namespace BuildList
             return result; 
         }
 
+
         public override string ToString()
         {
+            //string stg = "placeholder";
+            string stg = "";
+            
+            
 
-            return base.ToString();
+            for (int i = 0; i < Count; i++)
+            {
+
+                stg = stg + arr[i];
+            }
+            return stg;
         }
 
 
