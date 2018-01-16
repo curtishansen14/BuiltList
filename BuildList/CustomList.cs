@@ -121,21 +121,40 @@ namespace BuildList
         }
 
         // not quite done here 
+
         public CustomList<T> Zip(CustomList<T> list, CustomList<T> list2)
         {
             CustomList<T> ziplist = new CustomList<T>();
-
-            for (int i = 0; i < Count; i++)
+            if (list.Count == list2.Count)
             {
-                ziplist.Add(list[i]);
-                ziplist.Add(list[i]);
+                for (int i = 0; i < Count; i++)
+                {
+                    ziplist.Add(list[i]);
+                    ziplist.Add(list2[i]);
+                }
             }
+            else if (list.Count > list2.Count)
+            {
+                for (int i = 0; i < Count; i++)
+                {
+                    ziplist.Add(list[i]);
+                }
+            }
+            else if (list.Count < list2.Count)
+            {
+                for (int i = 0; i < Count; i++)
+                {
+                    ziplist.Add(list2[i]);
+                }
+            }
+
+        
             return ziplist;
         }
 
-        //getters and setters 
+    //getters and setters 
 
-        public int Count
+    public int Count
         {
             get { return count; }
         }
