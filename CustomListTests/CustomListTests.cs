@@ -178,9 +178,6 @@ namespace CustomListTests
 
         public void Remove_BoolYes_RemoveBool()
         {
-            //if this test removes something it returns true 
-            // if it doesn't returns false
-
             // Arrange
             Widget widget = new Widget();
             Widget thing = new Widget();
@@ -226,8 +223,91 @@ namespace CustomListTests
             Assert.AreEqual(expected, actual); 
         }
 
+        //********************Overload + opperator*******************
+
+        [TestMethod]
+
+        public void OpOverload_string_combinetwolists()
+        {
+            //Arrange 
+            CustomList<string> list = new CustomList<string>() { "a", "b", "c" };
+            CustomList<string> list2 = new CustomList<string>() { "d", "e", "f" };
+            CustomList<string> list3 = new CustomList<string>() { };
+            CustomList<string> expected = new CustomList<string>() { "a", "b", "c", "d", "e", "f" };
 
 
+            //Act
+            list3 = list + list2;
+            //Assert
+            Assert.AreEqual(expected, list3);
+        }
 
+        [TestMethod]
+
+        public void OpOverload_int_combinetwolists()
+        {
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
+            CustomList<int> list2 = new CustomList<int>() { 4, 5, 6 };
+            CustomList<int> list3 = new CustomList<int>() { };
+            CustomList<int> expected = new CustomList<int>() { 1, 2, 3, 4, 5, 6 };
+
+
+            //Act
+            list3 = list + list2;
+            //Assert
+            Assert.AreEqual(expected, list3);
+        }
+
+        [TestMethod]
+
+        public void OpOverload_Object_combineObjectlists()
+        {
+
+            Widget widget = new Widget();
+            Widget thing = new Widget();
+            Widget doodad = new Widget();
+            CustomList<Widget> list = new CustomList<Widget>() { widget, thing, doodad};
+            CustomList<Widget> list2 = new CustomList<Widget>() { widget, doodad, doodad, widget };
+            CustomList<Widget> list3 = new CustomList<Widget>();
+            CustomList<Widget> expected = new CustomList<Widget>() { widget, thing, doodad, widget, doodad, doodad, widget };
+
+            //Act
+            list3 = list + list2;
+
+            //Assert 
+            Assert.AreEqual(expected, list3);
+        }
+
+        [TestMethod]
+
+        public void OpOverload_int_verifyNoChangetoList()
+        {
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
+            CustomList<int> list2 = new CustomList<int>() { 4, 5, 6 };
+            CustomList<int> list3 = new CustomList<int>() { };
+            CustomList<int> expected = new CustomList<int>() { 1, 2, 3};
+
+
+            //Act
+            list3 = list + list2;
+            //Assert
+            Assert.AreEqual(expected, list);
+        }
+
+        [TestMethod]
+
+        public void OpOverload_int_verifyNoChangetoList2()
+        {
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
+            CustomList<int> list2 = new CustomList<int>() { 4, 5, 6 };
+            CustomList<int> list3 = new CustomList<int>() { };
+            CustomList<int> expected = new CustomList<int>() { 4, 5, 6 };
+
+
+            //Act
+            list3 = list + list2;
+            //Assert
+            Assert.AreEqual(expected, list2);
+        }
     }
 }

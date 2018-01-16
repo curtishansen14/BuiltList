@@ -90,7 +90,6 @@ namespace BuildList
 
         public override string ToString()
         {
-            //string stg = "placeholder";
             string stg = "";
             
             
@@ -101,6 +100,12 @@ namespace BuildList
                 stg = stg + arr[i];
             }
             return stg;
+        }
+
+        public static CustomList<T> operator+ (CustomList<T> list, CustomList<T> list2)
+        {
+            CustomList<T> list3 = new CustomList<T>();
+            return list3;
         }
 
 
