@@ -309,5 +309,22 @@ namespace CustomListTests
             //Assert
             Assert.AreEqual(expected, list2);
         }
+
+        [TestMethod]
+
+        public void OpOverload_count_CheckCount()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
+            CustomList<int> list2 = new CustomList<int>() { 4, 5, 6 };
+            CustomList<int> list3 = new CustomList<int>() { };
+            int expected = 6;
+
+            //Act
+            list3 = list + list2;
+
+            //Assert 
+            Assert.AreEqual(expected, list3.Count);
+        }
     }
 }
