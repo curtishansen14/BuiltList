@@ -105,6 +105,18 @@ namespace BuildList
         public static CustomList<T> operator+ (CustomList<T> list, CustomList<T> list2)
         {
             CustomList<T> list3 = new CustomList<T>();
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                list3.Add(list[i]); 
+            }
+ 
+            for (int i = 0; i<list.Count; i++)
+            {
+                list3.Add(list2[i]);
+            }
+
+            
             return list3;
         }
 

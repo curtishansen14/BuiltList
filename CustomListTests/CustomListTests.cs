@@ -233,34 +233,51 @@ namespace CustomListTests
             CustomList<string> list = new CustomList<string>() { "a", "b", "c" };
             CustomList<string> list2 = new CustomList<string>() { "d", "e", "f" };
             CustomList<string> list3 = new CustomList<string>() { };
-            CustomList<string> expected = new CustomList<string>() { "a", "b", "c", "d", "e", "f" };
+            string expected = "b";
 
 
             //Act
             list3 = list + list2;
             //Assert
-            Assert.AreEqual(expected, list3);
+            Assert.AreEqual(expected, list3[1]);
         }
 
         [TestMethod]
 
-        public void OpOverload_int_combinetwolists()
+        public void OpOverload_int_checksecondlist()
         {
             CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
             CustomList<int> list2 = new CustomList<int>() { 4, 5, 6 };
             CustomList<int> list3 = new CustomList<int>() { };
-            CustomList<int> expected = new CustomList<int>() { 1, 2, 3, 4, 5, 6 };
+            int expected = 4;
+           
+
+            //Act
+            list3 = list + list2;
+            //Assert
+            Assert.AreEqual(expected, list3[3]);
+        }
+
+
+        [TestMethod]
+
+        public void OpOverload_int_checkfirstlist()
+        {
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
+            CustomList<int> list2 = new CustomList<int>() { 4, 5, 6 };
+            CustomList<int> list3 = new CustomList<int>() { };
+            int expected = 2;
 
 
             //Act
             list3 = list + list2;
             //Assert
-            Assert.AreEqual(expected, list3);
+            Assert.AreEqual(expected, list3[1]);
         }
 
         [TestMethod]
 
-        public void OpOverload_Object_combineObjectlists()
+        public void OpOverload_Object_checkfirstlist()
         {
 
             Widget widget = new Widget();
@@ -269,46 +286,34 @@ namespace CustomListTests
             CustomList<Widget> list = new CustomList<Widget>() { widget, thing, doodad};
             CustomList<Widget> list2 = new CustomList<Widget>() { widget, doodad, doodad, widget };
             CustomList<Widget> list3 = new CustomList<Widget>();
-            CustomList<Widget> expected = new CustomList<Widget>() { widget, thing, doodad, widget, doodad, doodad, widget };
-
+            Widget expected = doodad;
             //Act
             list3 = list + list2;
 
             //Assert 
-            Assert.AreEqual(expected, list3);
+            Assert.AreEqual(expected, list3[2]);
         }
 
         [TestMethod]
 
-        public void OpOverload_int_verifyNoChangetoList()
+        public void OpOverload_Object_checksecondlist()
         {
-            CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
-            CustomList<int> list2 = new CustomList<int>() { 4, 5, 6 };
-            CustomList<int> list3 = new CustomList<int>() { };
-            CustomList<int> expected = new CustomList<int>() { 1, 2, 3};
 
-
+            Widget widget = new Widget();
+            Widget thing = new Widget();
+            Widget doodad = new Widget();
+            CustomList<Widget> list = new CustomList<Widget>() { widget, thing, doodad };
+            CustomList<Widget> list2 = new CustomList<Widget>() { widget, doodad, doodad, widget };
+            CustomList<Widget> list3 = new CustomList<Widget>();
+            Widget expected = widget;
             //Act
             list3 = list + list2;
-            //Assert
-            Assert.AreEqual(expected, list);
+
+            //Assert 
+            Assert.AreEqual(expected, list3[3]);
         }
 
-        [TestMethod]
 
-        public void OpOverload_int_verifyNoChangetoList2()
-        {
-            CustomList<int> list = new CustomList<int>() { 1, 2, 3 };
-            CustomList<int> list2 = new CustomList<int>() { 4, 5, 6 };
-            CustomList<int> list3 = new CustomList<int>() { };
-            CustomList<int> expected = new CustomList<int>() { 4, 5, 6 };
-
-
-            //Act
-            list3 = list + list2;
-            //Assert
-            Assert.AreEqual(expected, list2);
-        }
 
         [TestMethod]
 

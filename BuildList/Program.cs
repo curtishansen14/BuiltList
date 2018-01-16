@@ -10,23 +10,26 @@ namespace BuildList
     {
         static void Main(string[] args)
         {
-            //CustomList<bool> list = new CustomList<bool>() { true, false, true };
-            //Console.WriteLine(list.ToString());
-            //Console.Read();
+            //CustomList<int> list = new CustomList<int>() { 1, 2 };
+            //CustomList<int> list2 = new CustomList<int>() { 3, 4 };
+            //CustomList<int> list3 = list + list2;
+            //Console.WriteLine(list3);
 
-            //Widget widget = new Widget('a');
-            //Console.WriteLine(widget.ToString());
+            CustomList<string> list4 = new CustomList<string>() { "a", "b" };
+            CustomList<string> list5 = new CustomList<string>() { "c", "d" };
+            CustomList<string> list6 = list4 + list5;
+            Console.WriteLine(list6);
             //Console.ReadKey();
 
-            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4, 5 };
-            CustomList<bool> list2 = new CustomList<bool>() { true, false, true };
-            Console.WriteLine(list);
-            Console.WriteLine(list2);
-            Console.WriteLine("1 2 3 4 5 ");
-            Console.WriteLine("true false true ");
-            Console.Read();
-            
+            Widget widget = new Widget();
+            Widget thing = new Widget();
+            Widget doodad = new Widget();
+            CustomList<Widget> list = new CustomList<Widget>() { thing, thing, thing };
+            CustomList<Widget> list2 = new CustomList<Widget>() { widget, doodad, doodad, widget };
 
+            CustomList<Widget> list3 = list + list2;
+            Console.WriteLine(list3);
+            Console.ReadKey();
         }
 
     }
